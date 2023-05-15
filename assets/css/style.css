@@ -24,20 +24,39 @@ body {
 }
 
 header {
-	padding-top: 1%;
+	padding: 1% 2% 0 2%;
 	width: 100%;
-}
-header h1 {
 	display: flex;
-	justify-content: start;
-	width: 100%;
-	padding-left: 1%;
+	justify-content: space-between;
 }
-header h1 a{
-	padding: 0 1%;
-	display: grid;
+
+nav{
+	width: auto;
+	display: flex;
+	justify-content: end;
+
+}
+.navbar{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: auto;
+	list-style: none;
+}
+.navbar li{
+	margin:  0 1rem;
+}
+.navbar li a,
+h1 a{
+	display:grid;
 	place-items: center;
 }
+.navbar li a:hover,
+h1 a:hover{
+	filter: grayscale(0.75);
+}
+
+
 main {
 	background-color: #f3f5fc;
 	display: flex;
