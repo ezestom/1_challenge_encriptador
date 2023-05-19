@@ -5,26 +5,55 @@ const btnCopiar = document.querySelector(".copiar");
 const articleBox1 = document.querySelector(".box-response1");
 const articleBox2 = document.querySelector(".box-response2");
 
-btnEncriptar.addEventListener("click", () => {
-	articleBox2.style.display = "flex";
-	articleBox1.style.display = "none";   
-	encriptar();
-   if(encriptar){
-      btnCopiar.style.display = "block";
-   }
-});
+const textInput = document.querySelector("#textInput");
+const textOutput = document.querySelector("#textOutput");
 
-btnDesencriptar.addEventListener("click", () => {
-	articleBox2.style.display = "flex";
-	articleBox1.style.display = "none";
-	desencriptar();
-	if (desencriptar) {
+const warning = document.querySelector(".warning-active");
+const main = document.querySelector("main");
+
+btnEncriptar.addEventListener("click", () => {
+	if (textInput.value === "") {
+		articleBox1.style.display = "flex";
+		btnCopiar.style.display = "none";
+		articleBox2.style.display = "none";
+		warning.style.display = "grid";
+		main.style.filter = "blur(10px)";
+
+		setTimeout(() => {
+			main.style.filter = "blur(0px)";
+			warning.style.display = "none";
+			// Revertir el desenfoque después de 2 segundos
+		}, 2000);
+	} else {
+		articleBox2.style.display = "flex";
+		articleBox1.style.display = "none";
 		btnCopiar.style.display = "block";
+		warning.style.display = "none";
+		main.style.filter = "blur(0px)";
+		encriptar();
 	}
 });
 
-const textInput = document.querySelector("#textInput");
-const textOutput = document.querySelector("#textOutput");
+btnDesencriptar.addEventListener("click", () => {
+	if (textInput.value === "") {
+		articleBox1.style.display = "flex";
+		btnCopiar.style.display = "none";
+		articleBox2.style.display = "none";
+		warning.style.display = "grid";
+		main.style.filter = "blur(10px)";
+		setTimeout(() => {
+			main.style.filter = "blur(0px)";
+			warning.style.display = "none";
+			// Revertir el desenfoque después de 2 segundos
+		}, 2000);
+	} else {
+		articleBox2.style.display = "flex";
+		articleBox1.style.display = "none";
+		btnCopiar.style.display = "block";
+		warning.style.display = "none";
+		desencriptar();
+	}
+});
 
 function encriptar() {
 	let text = textInput.value.toLowerCase();
