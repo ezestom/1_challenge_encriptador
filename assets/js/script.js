@@ -10,6 +10,7 @@ const textOutput = document.querySelector("#textOutput");
 
 const warning = document.querySelector(".warning-active");
 const main = document.querySelector("main");
+const boxWarning = document.querySelector(".box-warning");
 
 btnEncriptar.addEventListener("click", () => {
 	if (textInput.value === "") {
@@ -18,15 +19,17 @@ btnEncriptar.addEventListener("click", () => {
 		articleBox2.style.display = "none";
 		warning.style.display = "grid";
 		main.style.filter = "blur(10px)";
+		boxWarning.style.zIndex = "2";
 
 		setTimeout(() => {
 			main.style.filter = "blur(0px)";
 			warning.style.display = "none";
+			boxWarning.style.zIndex = "0";
 			// Revertir el desenfoque después de 2 segundos
 		}, 2000);
 	} else {
 		articleBox2.style.display = "flex";
-		articleBox1.style.display = "none";
+		articleBox1.style.display = "none"; 
 		btnCopiar.style.display = "block";
 		warning.style.display = "none";
 		main.style.filter = "blur(0px)";
@@ -41,9 +44,11 @@ btnDesencriptar.addEventListener("click", () => {
 		articleBox2.style.display = "none";
 		warning.style.display = "grid";
 		main.style.filter = "blur(10px)";
+		boxWarning.style.zIndex = "2";
 		setTimeout(() => {
 			main.style.filter = "blur(0px)";
 			warning.style.display = "none";
+			boxWarning.style.zIndex = "0";
 			// Revertir el desenfoque después de 2 segundos
 		}, 2000);
 	} else {
