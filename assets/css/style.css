@@ -37,12 +37,17 @@ nav {
 	justify-content: end;
 }
 .navbar {
+	position:fixed;
+	top: -7%;
+	right: 5%;
+	transition: all .5s ease-in-out;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	width: auto;
 	list-style: none;
 }
+
 .navbar li {
 	margin: 0 1rem;
 }
@@ -96,6 +101,10 @@ main {
 }
 .warning-active h5 {
 	font-size: 2rem;
+}
+.warning-active p{
+	font-size: 1.75rem;
+	font-weight: semibold;
 }
 
 section {
@@ -302,3 +311,50 @@ a img:active {
 		padding: 3%;
 	}
 }
+
+
+/* checkbox */
+
+/* Hide the default checkbox */
+.container input {
+  opacity: 0;
+  cursor: pointer;
+  width: 0;
+  height: 0;
+}
+
+.container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+  user-select: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 3px;
+  background: #f3f5fc;
+}
+
+.container:hover {
+  background: rgba(216, 216, 216, 0.603);
+}
+
+.line {
+  width: calc(100% - 8px);
+  height: 3px;
+  left: 4px;
+  background: #0a3871;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: .7s transform cubic-bezier(0,1,.33,1.2), background .4s;
+}
+
+.line-indicator {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.container input:checked ~ .line-indicator {
+  transform: translateY(-50%);
+}
+

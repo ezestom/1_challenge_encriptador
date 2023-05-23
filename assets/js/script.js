@@ -29,7 +29,7 @@ btnEncriptar.addEventListener("click", () => {
 		}, 2000);
 	} else {
 		articleBox2.style.display = "flex";
-		articleBox1.style.display = "none"; 
+		articleBox1.style.display = "none";
 		btnCopiar.style.display = "block";
 		warning.style.display = "none";
 		main.style.filter = "blur(0px)";
@@ -87,3 +87,14 @@ function desencriptar() {
 
 	textOutput.value = textDesencriptado;
 }
+
+const navbar = document.querySelector(".navbar");
+const checkbox = document.querySelector(".checkbox");
+
+document.addEventListener("click", () => {
+	if(checkbox.checked){
+		navbar.style.top = "2%";
+	}else{
+		navbar.style.top = "-7%";
+	}
+});
