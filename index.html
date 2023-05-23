@@ -1,59 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Encriptador-ONE</title>
-		<link rel="stylesheet" href="./assets/css/style.css" />
 
-		<link
-			href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css"
-			rel="stylesheet" />
-	</head>
-	<body>
-		<header>
-			<h1>
-				<a
-					href="https://www.aluracursos.com/?gclid=CjwKCAjw6vyiBhB_EiwAQJRoppRxPOgnpWi5UyQbMygLeDsPkefL-nttZJxlKgUl-Z80Ln0h337uuhoCz4cQAvD_BwE"
-					target="_blank">
-					<img src="./assets/img/Logo-alura.png" alt="logo-alura" />
-				</a>
-			</h1>
-			<nav>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Encriptador-ONE</title>
+	<link rel="stylesheet" href="./assets/css/style.css" />
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="https://cdn.jsdelivr.net/npm/tsparticles-confetti@2.9.3/tsparticles.confetti.bundle.min.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
 
-				<ul class="navbar">
-					<li><a target="_blank" href="https://www.oracle.com/"><img src="./assets/img/Logo-oracle.png" alt="logo-oracle"></a></li>
-					<li><a target="_blank" href="https://www.youtube.com/watch?v=G10bVuLxeAc"><img src="./assets/img/Logo-youtube.png" alt="logo-youtube"></a></li>
-					<li><a target="_blank" href="https://ezestom.github.io/portfolio/#"><img src="./assets/img/Logo-portfolio.png" alt="Logo-portfolio"></a></li>
-					<li><a target="_blank" href="https://links-center.netlify.app/"><img src="./assets/img/Logo-linkscenter.png" alt="logo-linkscenter"></a></li>
-				</ul>
-				
-			</nav>
+<body>
+	<header>
+		<h1>
+			<a href="https://www.aluracursos.com/?gclid=CjwKCAjw6vyiBhB_EiwAQJRoppRxPOgnpWi5UyQbMygLeDsPkefL-nttZJxlKgUl-Z80Ln0h337uuhoCz4cQAvD_BwE"
+				target="_blank">
+				<img src="./assets/img/Logo-alura.png" alt="logo-alura" />
+			</a>
+		</h1>
+
+
+
+		<nav>
+
+			<ul class="navbar">
+				<li><a target="_blank" href="https://www.youtube.com/watch?v=G10bVuLxeAc"><img
+							src="./assets/img/Logo-youtube.png" alt="logo-youtube"></a></li>
+				<li><a target="_blank" href="https://blogs.oracle.com/oracle-latinoamerica/"><img
+							src="./assets/img/Logo-oracle.png" alt="logo-oracle"></a></li>
+				<li><a target="_blank" href="https://ezestom.github.io/portfolio/#"><img
+							src="./assets/img/Logo-portfolio.png" alt="Logo-portfolio"></a></li>
+				<li><a target="_blank" href="https://links-center.netlify.app/"><img src="./assets/img/Logo-linkscenter.png"
+							alt="logo-linkscenter"></a></li>
+			</ul>
+
+		</nav>
+		<div class="box-switches">
+
 			<label class="container">
-  				<input class="checkbox" type="checkbox" checked="checked">
-  				<div class="line"></div>
-  				<div class="line line-indicator"></div>
+				<input class="checkbox" type="checkbox">
+				<div class="line"></div>
+				<div class="line line-indicator"></div>
 			</label>
-		</header>
-		
-		<div class="box-warning">
-					<abbr title="warning" class="warning-active warning-desactive">
-						<h5>Oops! Hay algún error..</h5>
-						<p> Escriba su mensaje para encriptar.</p>
-					</abbr>
+
+			<div class="checkbox-wrapper-12">
+				<div class="cbx">
+					<input id="cbx-12" type="checkbox">
+					<label for="cbx-12"></label>
+					<svg width="15" height="14" viewBox="0 0 15 14" fill="none">
+						<path d="M2 8.36364L6.23077 12L13 2"></path>
+					</svg>
+				</div>
+
+				<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+					<defs>
+						<filter id="goo-12">
+							<feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"></feGaussianBlur>
+							<feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -7"
+								result="goo-12"></feColorMatrix>
+							<feBlend in="SourceGraphic" in2="goo-12"></feBlend>
+						</filter>
+					</defs>
+				</svg>
+			</div>
+
 		</div>
+	</header>
 
-		<main>
-			<section class="one">
-				<article class="box-request">
-					<textarea
-						name="textInput"
-						id="textInput"
-						placeholder="Ingrese su texto para encriptar y desencriptar aquí..."
-						"></textarea>
+	<main>
+		<section class="one">
+			<article class="box-request">
+				<textarea name="textInput" id="textInput"
+					placeholder="Ingrese su texto para encriptar y desencriptar aquí..." "></textarea>
 
-					<div class="box-buttons">
+					<div class=" box-buttons">
 						<div class="text-error">
 							<i class="ri-error-warning-fill"></i>
 							<p>Solo letras minúsculas y sin acentos</p>
@@ -69,29 +91,32 @@
 			<section class="two">
 				<article class="box-response2">
 					<textarea name="textOutput" id="textOutput"></textarea>
-				</article>
+			</article>
 
-				<article class="box-response1">					
-					<img src="./assets/img/Muñeco.png" id="imagen" alt="Muñeco" />
-					<h3 class=>Ningún mensaje fue encontrado</h3>
-					<p>Ingresa el texto que desees encriptar o desencriptar.</p>
-				</article>
-				<div>
-					<button type="button" class="copiar">
-						Copiar <i class="ri-file-copy-fill icon"></i>
-					</button>
-				</div>
-			</section>
-		</main>
+			<article class="box-response1">
+				<img src="./assets/img/Muñeco.png" id="imagen" alt="Muñeco" />
+				<h3 class=>Ningún mensaje fue encontrado</h3>
+				<p>Ingresa el texto que desees encriptar o desencriptar.</p>
+			</article>
+			<div>
+				<button type="button" class="copiar" id="copy">
+					Copiar <i class="ri-file-copy-fill icon"></i>
+				</button>
+			</div>
+		</section>
+	</main>
 
-		<footer>
+	<footer>
 
-			<a target="_blank" href="https://github.com/ezestom"
-				><i class="ri-copyright-fill"></i>Hecho con 💙 por Eze Stom, te espero en mi
-				<i class="ri-github-fill"></i
-			></a>
+		<a target="_blank" href="https://github.com/ezestom"><i class="ri-copyright-fill"></i>Hecho con 💙 por Eze Stom,
+			te espero en mi
+			<i class="ri-github-fill"></i></a>
 
-		</footer>
-		<script type="text/javascript" src="./assets/js/script.js"></script>
-	</body>
+	</footer>
+	<script type="text/javascript" src="./assets/js/script.js"></script>
+	<script type="text/javascript" src="./assets/js/navigatorApi.js"></script>
+	<script tipe=" text/javascript" src="./assets/js/colorMenu.js"></script>
+	<script tipe="text/javascript" src="./assets/js/welcome.js"></script>
+</body>
+
 </html>

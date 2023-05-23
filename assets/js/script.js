@@ -17,22 +17,19 @@ btnEncriptar.addEventListener("click", () => {
 		articleBox1.style.display = "flex";
 		btnCopiar.style.display = "none";
 		articleBox2.style.display = "none";
-		warning.style.display = "grid";
-		main.style.filter = "blur(10px)";
-		boxWarning.style.zIndex = "2";
-
-		setTimeout(() => {
-			main.style.filter = "blur(0px)";
-			warning.style.display = "none";
-			boxWarning.style.zIndex = "0";
-			// Revertir el desenfoque después de 2 segundos
-		}, 2000);
+		Swal.fire({
+			position: "center",
+			icon: "error",
+			title: "Opss! Tienes que escribir algún texto para encriptar.",
+			showConfirmButton: false,
+			timer: 1500,
+			toast: true,
+			backdrop: true,
+		});
 	} else {
 		articleBox2.style.display = "flex";
 		articleBox1.style.display = "none";
 		btnCopiar.style.display = "block";
-		warning.style.display = "none";
-		main.style.filter = "blur(0px)";
 		encriptar();
 	}
 });
@@ -42,20 +39,19 @@ btnDesencriptar.addEventListener("click", () => {
 		articleBox1.style.display = "flex";
 		btnCopiar.style.display = "none";
 		articleBox2.style.display = "none";
-		warning.style.display = "grid";
-		main.style.filter = "blur(10px)";
-		boxWarning.style.zIndex = "2";
-		setTimeout(() => {
-			main.style.filter = "blur(0px)";
-			warning.style.display = "none";
-			boxWarning.style.zIndex = "0";
-			// Revertir el desenfoque después de 2 segundos
-		}, 2000);
+		Swal.fire({
+			position: "center",
+			icon: "error",
+			title: "Opss! Tienes que escribir algún texto para encriptar.",
+			showConfirmButton: false,
+			timer: 1500,
+			toast: true,
+			backdrop: true,
+		});
 	} else {
 		articleBox2.style.display = "flex";
 		articleBox1.style.display = "none";
 		btnCopiar.style.display = "block";
-		warning.style.display = "none";
 		desencriptar();
 	}
 });
@@ -92,9 +88,7 @@ const navbar = document.querySelector(".navbar");
 const checkbox = document.querySelector(".checkbox");
 
 document.addEventListener("click", () => {
-	if(checkbox.checked){
-		navbar.style.top = "2%";
-	}else{
-		navbar.style.top = "-7%";
-	}
+	checkbox.checked
+		? (navbar.style.top = ".5rem")
+		: (navbar.style.top = "-3rem");
 });
