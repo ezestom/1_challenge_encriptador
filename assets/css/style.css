@@ -168,8 +168,10 @@ section {
 	outline: none;
 }
 .text-error {
+	text-align: center;
 	display: flex;
 	color: #495057;
+	padding: 1%;
 }
 .box-buttons {
 	display: flex;
