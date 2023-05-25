@@ -171,7 +171,7 @@ section {
 	text-align: center;
 	display: flex;
 	color: #495057;
-	padding: 1%;
+	padding: 1% 2%;
 }
 .box-buttons {
 	display: flex;
@@ -281,6 +281,14 @@ a img:active {
 		position: fixed;
 		left: 3rem;
 	}
+	main,
+	article,
+	body,
+	footer{
+		height: 100%;
+		width: 100%;
+	}
+
 }
 
 /* checkbox */
