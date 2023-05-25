@@ -1,5 +1,4 @@
 const body = document.querySelector("body");
-// const main = document.querySelector("main");
 const header = document.querySelector("header");
 const images = document.querySelectorAll("img");
 const input = document.querySelector("#textInput");

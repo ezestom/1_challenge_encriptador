@@ -92,3 +92,24 @@ document.addEventListener("click", () => {
 		? (navbar.style.top = ".5rem")
 		: (navbar.style.top = "-3rem");
 });
+
+textInput.addEventListener("keydown", function (event) {
+	let patron = /^[a-zA-Z\s]*$/;
+	let textInput = event.target.value;
+	var tecla = event.key;
+
+	if (!patron.test(textInput) && !patron.test(tecla)) {
+		event.preventDefault();
+		Swal.fire({
+			position: "center",
+			icon: "error",
+			title: "Opss! Carácter no permitido.",
+			showConfirmButton: false,
+			timer: 1500,
+			toast: true,
+			backdrop: true,
+		});
+	} else {
+		return true;
+	}
+});
